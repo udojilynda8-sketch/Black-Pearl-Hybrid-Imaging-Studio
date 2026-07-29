@@ -1,36 +1,492 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Black Pearl Art</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Black Pearl Art | Contemporary Digital Photography Studio</title>
+
+<meta name="description" content="Black Pearl Art is a Nigerian contemporary digital photography studio creating cinematic portraiture, conceptual fine-art photography, and collector-quality wall art prints for modern interiors worldwide.">
+
+<meta name="keywords" content="Black Pearl Art, fine art photography, conceptual portrait photography, cinematic photography, African contemporary art, digital photography prints, wall art, collector prints, Nigerian photography artist">
+
+<meta name="author" content="Udoji Ogechukwu Lynda">
+
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="Black Pearl Art | Contemporary Digital Photography Studio">
+<meta property="og:description" content="Collector-quality conceptual portrait and atmospheric digital photography from Nigerian contemporary artist Udoji Ogechukwu Lynda.">
+<meta property="og:image" content="https://yourdomain.com/LOGO.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourdomain.com">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Black Pearl Art | Contemporary Digital Photography Studio">
+<meta name="twitter:description" content="Cinematic portraiture and collector-quality fine art photography.">
+<meta name="twitter:image" content="https://yourdomain.com/LOGO.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --surface: #151515;
+      --gold: #c8a96a;
+      --text: #f2e7d5;
+      --muted: #a8a29e;
+      --border: #262626;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Global image style */
+    img {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(11, 11, 11, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    /* Logo */
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 72px;
+      width: auto;
+      border-radius: 0; /* keeps logo sharp */
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+      padding: 80px 0;
+    }
+
+    .eyebrow {
+      letter-spacing: 4px;
+      color: var(--gold);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      margin-bottom: 36px;
+      max-width: 560px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--bg);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--gold);
+      color: var(--text);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero-image {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 700px;
+      margin-bottom: 42px;
+    }
+
+    /* Cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .card-content {
+      padding: 22px;
+    }
+
+    .card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .price {
+      color: var(--gold);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 18px;
+    }
+
+    /* About */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 36px;
+    }
+
+    /* Trust section */
+    .trust {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .trust-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+    }
+
+    .trust-item h4 {
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      .hero,
+      .about,
+      .grid,
+      .trust {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+
+      .logo img {
+        height: 64px;
+      }
+    }
+  </style>
+</head> <link rel="canonical" href="https://https://black-pearl-hybrid-imaging-studio.vercel.app//">
 
 <body>
 
-<nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="shop.html">Shop</a></li>
-<li><a href="payment.html">Payment</a></li>
-</ul>
-</nav>
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-inner">
 
-<header>
-<h1>BLACK PEARL ART</h1>
-<p>
-A luxury hybrid imaging studio blending fine art photography, digital sculpting,
-and conceptual storytelling.
-</p>
-<a href="shop.html" class="pay-btn">View Collection</a>
-</header>
+      <!-- Logo -->
+      <div class="logo">
+        <a href="index.html">
+        <img src="images/LOGO.JPg" alt="LOGO" />
+        </a>
+      </div>
 
-<footer>
-<p>Contact: <a href="mailto:black_pearlart@outlook.com">black_pearlart@outlook.com</a></p>
-<p>© 2026 Black Pearl Art Hybrid Imaging Studio</p>
-</footer>
+      <!-- Menu -->
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Collection</a>
+        <a href="about.html">About</a>
+        <a href="payment.html">Payment</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="container">
+
+    <!-- Hero -->
+    <section class="hero">
+
+      <div>
+        <div class="eyebrow">CONTEMPORARY DIGITAL PHOTOGRAPHY</div>
+
+        <h1>Art Designed for Modern Interiors</h1>
+
+        <p>
+          Discover museum-quality conceptual portraits and atmospheric digital
+          photography created through cinematic digital imaging and fine-art
+          composition. Curated for collectors, designers, and art lovers worldwide.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="shop.html" class="btn btn-primary">Explore Collection</a>
+          <a href="about.html" class="btn btn-secondary">About the Artist</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="images/solitude.png" alt="Solitude - cinematic conceptual portrait fine art photography print">
+      </div>
+
+    </section>
+
+    <!-- Featured collection -->
+    <section>
+
+      <h2 class="section-title">Featured Collection</h2>
+
+      <p class="section-subtitle">
+        A curated selection of conceptual portrait and atmospheric digital
+        photography created for collectors, interior designers, and contemporary
+        art enthusiasts.
+      </p>
+
+      <div class="grid">
+
+        <article class="card">
+          <img src="images/solitude.png" alt="Solitude" />
+          <div class="card-content">
+            <h3>Solitude</h3>
+            <p>
+              A cinematic meditation on identity, memory, and the path between
+              isolation and self-discovery.
+            </p>
+            <span class="price">From $65</span>
+            <a href="shop.html" class="btn btn-secondary">View Artwork</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/anatomy of mourning.jpg" alt="Anatomy of Mourning" />
+          <div class="card-content">
+            <h3>ANATOMY OF MOURNING</h3>
+            <p>
+              A monochrome portrait exploring grief, vulnerability, and the
+              tension between concealment and revelation.
+            </p>
+            <span class="price">From $55</span>
+            <a href="shop.html" class="btn btn-secondary">View Artwork</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/gambit.jpg" alt="The Grandmaster's Gambit" />
+          <div class="card-content">
+            <h3>The Grandmaster’s Gambit</h3>
+            <p>In a game of chess, there’s no room for errors, only consequences.</p>
+            <span class="price">From $75</span>
+            <a href="shop.html" class="btn btn-secondary">View Artwork</a>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- About -->
+    <section class="about">
+
+      <div class="about-box">
+
+        <h2 class="section-title">About the Artist</h2>
+
+        <p>
+          Udoji Ogechukwu Lynda is a Nigerian contemporary digital photography
+          artist and founder of Black Pearl Art. Her work explores themes of memory,
+          identity, resilience, grief, and transformation through cinematic portraiture
+          and atmospheric digital compositions.
+        </p>
+
+        <p>
+          By combining fine-art composition with modern digital imaging techniques,
+          she creates emotionally driven artworks that invite personal reflection and
+          multiple interpretations. Black Pearl Art is dedicated to producing
+          collector-quality contemporary works for audiences and collectors around
+          the world.
+        </p>
+
+    
+
+    <!-- Collector services -->
+    <section>
+
+      <h2 class="section-title">Collector Services</h2>
+
+      <p class="section-subtitle">
+        Every order is prepared with gallery-level presentation and international
+        collectors in mind.
+      </p>
+
+      <div class="trust">
+
+        <div class="trust-item">
+          <h4>Secure Payment</h4>
+          <p>International payment options with encrypted checkout and invoice confirmation.</p>
+        </div>
+
+        <div class="trust-item">
+          <h4>Worldwide Shipping</h4>
+          <p>Carefully packaged prints and collector editions shipped to customers globally.</p>
+        </div>
+
+        <div class="trust-item">
+          <h4>Certificate Included</h4>
+          <p>Signed and certified limited-edition artworks with archival presentation standards.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div>
+        <strong>Black Pearl Art</strong><br />
+        
+      </div>
+
+      <div>
+        <a href="mailto:Black_Pearlart@outlook.com">Black_Pearlart@outlook.com</a>
+      </div>
+
+      <div>
+        © 2026 Black Pearl Art. All rights reserved.
+      </div>
+
+    </div>
+
+  </footer>
 
 </body>
 </html>

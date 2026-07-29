@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Thank You | Black Pearl Art</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#0b0b0b;
+    --surface:#151515;
+    --gold:#c8a96a;
+    --text:#f2e7d5;
+    --muted:#b7b2aa;
+    --whatsapp:#25D366;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.card{
+    width:min(760px,92%);
+    background:var(--surface);
+    border:1px solid #262626;
+    border-radius:24px;
+    padding:60px;
+    text-align:center;
+}
+
+.check{
+    width:100px;
+    height:100px;
+    margin:auto;
+    margin-bottom:25px;
+    border-radius:50%;
+    background:rgba(37,211,102,.15);
+    color:#25D366;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:56px;
+}
+
+h1{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--gold);
+    font-size:3rem;
+    margin-bottom:18px;
+}
+
+p{
+    color:var(--muted);
+    font-size:1.08rem;
+    line-height:1.8;
+    max-width:600px;
+    margin:auto auto 40px;
+}
+
+.buttons{
+    display:flex;
+    gap:18px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:16px 34px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.whatsapp{
+    background:#25D366;
+    color:#fff;
+}
+
+.whatsapp:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(37,211,102,.35);
+}
+
+.home{
+    border:1px solid var(--gold);
+    color:var(--gold);
+}
+
+.home:hover{
+    background:rgba(200,169,106,.12);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="check">✓</div>
+
+<h1>Thank You for Your Purchase!</h1>
+
+<p>
+Your payment has been received. To complete your order, please send your proof of payment via WhatsApp or Email. Once we verify your payment, we'll begin processing your artwork and contact you if any additional information is required.
+</p>
+
+<div class="buttons">
+
+<a href="https://wa.me/2348163922762?text=Hello,%20I%20have%20completed%20my%20payment%20for%20my%20Black%20Pearl%20Art%20order.%20Please%20find%20my%20proof%20of%20payment."
+class="btn whatsapp"
+target="_blank">
+📱 Send Proof via WhatsApp
+</a>
+
+<a href="mailto:black_pearlart@outlook.com?subject=Payment%20Confirmation&body=Hello%20Black%20Pearl%20Art,%0A%0AI%20have%20completed%20my%20payment.%20Please%20find%20my%20proof%20of%20payment%20attached.%0A%0AThank%20you."
+class="btn email">
+📧 Email Proof of Payment
+</a>
+
+<a href="index.html"
+class="btn home">
+🏠 Return to Home
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

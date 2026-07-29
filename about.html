@@ -1,34 +1,533 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>About | Black Pearl Art</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+<title>About | Black Pearl Art</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#0b0b0b;
+    --surface:#151515;
+    --gold:#c8a96a;
+    --text:#f2e7d5;
+    --muted:#a8a29e;
+    --border:#262626;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.8;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    width:100%;
+    display:block;
+    border-radius:18px;
+}
+
+.container{
+    width:min(1200px,92%);
+    margin:auto;
+}
+
+/* NAV */
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(11,11,11,0.95);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+}
+
+.nav-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.8rem;
+    color:var(--gold);
+    letter-spacing:1px;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+}
+
+.nav-links a{
+    color:var(--muted);
+    font-weight:500;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:var(--text);
+}
+
+/* HERO */
+.hero{
+    position:relative;
+    min-height:72vh;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+}
+
+.hero img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(0.28);
+    border-radius:0;
+}
+
+.hero::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.75));
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    width:min(760px,92%);
+    margin:auto;
+    text-align:center;
+}
+
+.eyebrow{
+    color:var(--gold);
+    letter-spacing:4px;
+    font-size:0.9rem;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(3rem,8vw,6rem);
+    line-height:1.02;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:var(--muted);
+    font-size:1.12rem;
+    max-width:640px;
+    margin:auto;
+}
+
+/* SECTIONS */
+section{
+    padding:88px 0;
+}
+
+.section-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:3rem;
+    margin-bottom:18px;
+    color:var(--gold);
+}
+
+.section-subtitle{
+    color:var(--muted);
+    max-width:760px;
+    margin-bottom:42px;
+}
+
+/* TWO COLUMN */
+.two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:48px;
+    align-items:center;
+}
+
+.card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:34px;
+}
+
+/* PROCESS */
+.process{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:24px;
+}
+
+.step{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:24px;
+}
+
+.step-number{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:rgba(200,169,106,.14);
+    border:1px solid rgba(200,169,106,.4);
+    color:var(--gold);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    margin-bottom:14px;
+}
+
+.step h4{
+    margin-bottom:8px;
+}
+
+/* COLLECTOR */
+.collector-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.collector-item{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:26px;
+}
+
+.collector-item h4{
+    color:var(--gold);
+    margin-bottom:10px;
+}
+
+/* CONTACT */
+.contact-card{
+    background:linear-gradient(180deg, rgba(200,169,106,.10), rgba(21,21,21,1));
+    border:1px solid rgba(200,169,106,.35);
+    border-radius:28px;
+    padding:42px;
+    text-align:center;
+}
+
+.contact-actions{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-top:24px;
+}
+
+.btn{
+    padding:14px 26px;
+    border-radius:999px;
+    font-weight:600;
+    transition:.25s;
+    min-width:180px;
+}
+
+.btn-primary{
+    background:var(--gold);
+    color:#0b0b0b;
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+}
+
+.btn-outline{
+    border:1px solid var(--gold);
+    color:var(--text);
+}
+
+.btn-outline:hover{
+    background:rgba(200,169,106,.12);
+}
+
+/* FOOTER */
+footer{
+    border-top:1px solid var(--border);
+    padding:42px 0;
+    color:var(--muted);
+    margin-top:10px;
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:24px;
+    flex-wrap:wrap;
+}
+
+/* RESPONSIVE */
+@media (max-width: 980px){
+
+    .two-col,
+    .process,
+    .collector-grid{
+        grid-template-columns:1fr;
+    }
+
+    .nav-inner{
+        flex-direction:column;
+        gap:14px;
+    }
+
+    .hero{
+        min-height:60vh;
+    }
+}
+</style>
+
 </head>
 
 <body>
 
 <nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="shop.html">Shop</a></li>
-<li><a href="payment.html">Payment</a></li>
-</ul>
+    <div class="container nav-inner">
+        <div class="logo">BLACK PEARL ART</div>
+
+```
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Collection</a>
+        <a href="about.html">About</a>
+        <a href="payment.html">Payment</a>
+    </div>
+</div>
+```
+
 </nav>
 
-<section>
-<h2>About the Studio</h2>
-<p style="max-width:900px;margin:auto;text-align:center;">
-Black Pearl Art is a contemporary hybrid imaging studio creating emotionally charged
-visual narratives. Each piece exists at the intersection of realism and imagination,
-crafted for collectors who value depth, identity, and timeless beauty.
-</p>
+<header class="hero">
+    <img src="images/solitude.png" alt="Black Pearl Art Studio">
+
+```
+<div class="hero-content">
+    <div class="eyebrow">ABOUT THE STUDIO</div>
+
+    <h1>Black Pearl Art</h1>
+
+    <p>
+        Contemporary conceptual portraiture created through cinematic digital imaging,
+        fine-art composition, and a studio practice centered on memory, identity,
+        resilience, and emotional storytelling.
+    </p>
+</div>
+```
+
+</header>
+
+<main class="container">
+
+<section class="two-col">
+
+```
+<div class="card">
+    <h2 class="section-title">Artist Statement</h2>
+
+    <p>
+        Black Pearl Art explores the emotional architecture of human experience through
+        conceptual portraiture and atmospheric visual narratives. The works investigate
+        memory, grief, resilience, transformation, and the quiet spaces between who we
+        are and who we are becoming.
+    </p>
+
+    <p style="margin-top:18px;">
+        Each composition is developed through a hybrid process that combines digital
+        imaging, photographic sensibility, cinematic color grading, and fine-art
+        compositional principles. The result is a body of work that is both contemporary
+        and timeless, designed to invite contemplation rather than provide immediate answers.
+    </p>
+</div>
+
+<div>
+    <img src="images/anatomy of mourning.jpg" alt="Anatomy of Mourning">
+</div>
+```
+
 </section>
 
+<section>
+
+```
+<h2 class="section-title">The Creative Process</h2>
+
+<p class="section-subtitle">
+    Every artwork is developed through a deliberate studio workflow that prioritizes concept,
+    visual harmony, and collector-quality presentation.
+</p>
+
+<div class="process">
+
+    <div class="step">
+        <div class="step-number">1</div>
+        <h4>Concept</h4>
+        <p>Ideas emerge from themes of memory, identity, resilience, and emotional transformation.</p>
+    </div>
+
+    <div class="step">
+        <div class="step-number">2</div>
+        <h4>Composition</h4>
+        <p>Portrait structure, spatial balance, and symbolic elements are refined into a cohesive visual narrative.</p>
+    </div>
+
+    <div class="step">
+        <div class="step-number">3</div>
+        <h4>Cinematic Color</h4>
+        <p>Light, contrast, and tonal relationships are developed to create atmosphere and emotional depth.</p>
+    </div>
+
+    <div class="step">
+        <div class="step-number">4</div>
+        <h4>Collector Edition</h4>
+        <p>Final artworks are prepared for archival-quality printing and long-term collector presentation.</p>
+    </div>
+
+</div>
+```
+
+</section>
+
+<section class="two-col">
+
+```
+<div>
+    <img src="images/gambit.jpg" alt="The Grandmaster’s Gambit">
+</div>
+
+<div class="card">
+    <h2 class="section-title">Studio Practice</h2>
+
+    <p>
+        The studio operates as an independent contemporary art practice with a focus on
+        conceptual portraiture, monochrome studies, and atmospheric compositions.
+    </p>
+
+    <p style="margin-top:18px;">
+        Works are available to private collectors worldwide, and selected pieces are produced
+        as limited-edition prints with archival presentation standards. The studio also accepts
+        commission inquiries for custom conceptual portrait projects and collector collaborations.
+    </p>
+</div>
+```
+
+</section>
+
+<section>
+
+```
+<h2 class="section-title">For Collectors</h2>
+
+<div class="collector-grid">
+
+    <div class="collector-item">
+        <h4>Archival Quality</h4>
+        <p>Printed using museum-grade materials designed for longevity and color stability.</p>
+    </div>
+
+    <div class="collector-item">
+        <h4>Worldwide Availability</h4>
+        <p>Works are available to private collectors internationally through direct studio inquiries.</p>
+    </div>
+
+    <div class="collector-item">
+        <h4>Certificate Included</h4>
+        <p>Limited-edition works include a signed certificate of authenticity and collector documentation.</p>
+    </div>
+
+</div>
+```
+
+</section>
+
+<section>
+
+```
+<div class="contact-card">
+
+    <h2 class="section-title">Commissions & Inquiries</h2>
+
+    <p class="section-subtitle" style="margin:auto;">
+        For acquisition requests, commission inquiries, collector collaborations, or additional
+        information about available works, contact the studio directly.
+    </p>
+
+    <div class="contact-actions">
+
+        <a class="btn btn-primary"
+           href="mailto:black_pearlart@outlook.com?subject=Collector Inquiry">
+           Email the Studio
+        </a>
+
+        <a class="btn btn-outline"
+           href="https://wa.me/2348163922762?text=Hello, I would like to make a collector inquiry."
+           target="_blank">
+           WhatsApp Inquiry
+        </a>
+
+    </div>
+
+    <p style="margin-top:22px; color:var(--muted);">
+        Response time: typically within 24–48 hours.
+    </p>
+
+</div>
+```
+
+</section>
+
+</main>
+
 <footer>
-<p>© 2026 Black Pearl Art</p>
+    <div class="container footer-inner">
+
+```
+    <div>
+        <strong>Black Pearl Art</strong><br>
+      
+    </div>
+
+    <div>
+        <a href="mailto:black_pearlart@outlook.com">
+            black_pearlart@outlook.com
+        </a>
+    </div>
+
+    <div>
+        © 2026 Black Pearl Art. All rights reserved.
+    </div>
+
+</div>
+```
+
 </footer>
 
 </body>
