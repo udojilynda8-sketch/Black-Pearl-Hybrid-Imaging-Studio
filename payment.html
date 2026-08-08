@@ -1,313 +1,101 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Payment & Delivery | Black Pearl Art</title>
+
+<title>Payment | Black Pearl Hybrid Imaging Studio</title>
+
+<meta name="description"
+content="Complete your artwork purchase through secure bank transfer.">
+
+<link rel="stylesheet" href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
-<style>
-:root{
-    --bg:#0b0b0b;
-    --surface:#151515;
-    --gold:#c8a96a;
-    --text:#f2e7d5;
-    --muted:#a8a29e;
-    --border:#262626;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Inter',sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.8;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-.container{
-    width:min(1100px,92%);
-    margin:auto;
-}
-
-/* NAV */
-nav{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(11,11,11,0.95);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid var(--border);
-}
-
-.nav-inner{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 0;
-}
-
-.logo{
-    font-family:'Cormorant Garamond',serif;
-    font-size:1.8rem;
-    color:var(--gold);
-    letter-spacing:1px;
-}
-
-.nav-links{
-    display:flex;
-    gap:28px;
-}
-
-.nav-links a{
-    color:var(--muted);
-    font-weight:500;
-    transition:0.3s;
-}
-
-.nav-links a:hover{
-    color:var(--text);
-}
-
-/* HERO */
-.hero{
-    padding:96px 0 72px;
-    border-bottom:1px solid var(--border);
-    text-align:center;
-}
-
-.eyebrow{
-    color:var(--gold);
-    letter-spacing:4px;
-    font-size:0.9rem;
-    margin-bottom:18px;
-}
-
-.hero h1{
-    font-family:'Cormorant Garamond',serif;
-    font-size:clamp(3rem,7vw,5rem);
-    margin-bottom:18px;
-}
-
-.hero p{
-    color:var(--muted);
-    max-width:720px;
-    margin:auto;
-}
-
-/* CONTENT */
-section{
-    padding:72px 0;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:1.1fr .9fr;
-    gap:28px;
-}
-
-.card{
-    background:var(--surface);
-    border:1px solid var(--border);
-    border-radius:24px;
-    padding:32px;
-}
-
-.card h2{
-    font-family:'Cormorant Garamond',serif;
-    font-size:2.3rem;
-    color:var(--gold);
-    margin-bottom:18px;
-}
-
-.account-row{
-    display:flex;
-    justify-content:space-between;
-    gap:16px;
-    padding:14px 0;
-    border-bottom:1px solid var(--border);
-}
-
-.account-row:last-child{
-    border-bottom:none;
-}
-
-.label{
-    color:var(--muted);
-}
-
-.value{
-    font-weight:600;
-    text-align:right;
-}
-
-/* PROCESS */
-.steps{
-    display:grid;
-    gap:16px;
-    margin-top:18px;
-}
-
-.step{
-    display:flex;
-    gap:16px;
-    align-items:flex-start;
-    padding:16px;
-    border:1px solid var(--border);
-    border-radius:16px;
-    background:rgba(255,255,255,0.02);
-}
-
-.step-number{
-    width:38px;
-    height:38px;
-    border-radius:50%;
-    background:rgba(200,169,106,.14);
-    border:1px solid rgba(200,169,106,.35);
-    color:var(--gold);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:700;
-    flex-shrink:0;
-}
-
-/* NOTICE */
-.notice{
-    margin-top:22px;
-    padding:22px;
-    border-radius:18px;
-    border:1px solid rgba(200,169,106,.35);
-    background:rgba(200,169,106,.08);
-}
-
-.notice h3{
-    color:var(--gold);
-    margin-bottom:10px;
-}
-
-/* CTA */
-.cta{
-    margin-top:28px;
-    display:flex;
-    gap:14px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    padding:14px 24px;
-    border-radius:999px;
-    font-weight:600;
-    transition:.25s;
-    min-width:220px;
-    text-align:center;
-}
-
-.btn-primary{
-    background:var(--gold);
-    color:#0b0b0b;
-}
-
-.btn-primary:hover{
-    transform:translateY(-2px);
-}
-
-.btn-outline{
-    border:1px solid var(--gold);
-    color:var(--text);
-}
-
-.btn-outline:hover{
-    background:rgba(200,169,106,.12);
-}
-
-/* FOOTER */
-footer{
-    border-top:1px solid var(--border);
-    padding:38px 0;
-    color:var(--muted);
-    text-align:center;
-}
-
-@media (max-width: 900px){
-
-    .grid{
-        grid-template-columns:1fr;
-    }
-
-    .nav-inner{
-        flex-direction:column;
-        gap:14px;
-    }
-
-    .account-row{
-        flex-direction:column;
-    }
-
-    .value{
-        text-align:left;
-    }
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+rel="stylesheet">
 
 </head>
 
+
 <body>
 
-<nav>
-    <div class="container nav-inner">
-        <div class="logo">BLACK PEARL ART</div>
+<header>
 
-```
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="shop.html">Collection</a>
-        <a href="about.html">About</a>
-        <a href="payment.html">Payment</a>
-    </div>
+<nav class="navbar">
+
+<div class="container">
+
+<a href="index.html" class="logo">
+
+<img src="images/LOGO.JPG"
+alt="Black Pearl Hybrid Imaging Studio">
+
+</a>
+
+
+<ul class="nav-menu">
+
+<li>
+<a href="index.html">Home</a>
+</li>
+
+<li>
+<a href="collections.html">Collections</a>
+</li>
+
+<li>
+<a href="shop.html" class="active">Shop</a>
+</li>
+
+<li>
+<a href="about.html">About</a>
+</li>
+
+<li>
+<a href="contact.html">Contact</a>
+</li>
+
+</ul>
+
 </div>
-```
 
 </nav>
 
-<header class="hero">
-    <div class="container">
-
-```
-    <div class="eyebrow">PAYMENT & DELIVERY</div>
-
-    <h1>Secure Acquisition Process</h1>
-
-    <p>
-        Black Pearl Art currently operates through a collector inquiry and bank transfer process.
-        After confirming artwork availability and shipping details, payment instructions are provided
-        directly by the studio.
-    </p>
-
-</div>
-```
-
 </header>
 
-<main class="container">
 
-<section>
+<!-- ==========================================
+     PAYMENT
+========================================== -->
 
-```
-<div class="grid">
+<section class="artwork-section payment-section">
+
+<div class="container">
+
+
+<div class="section-heading">
+
+<p class="eyebrow">
+PAYMENT
+</p>
+
+<h1>
+Complete Your Purchase
+</h1>
+
+<p>
+Thank you for choosing to collect an artwork from Black Pearl Hybrid Imaging Studio. Please complete your bank transfer using the details below.
+</p>
+
+</div>
 
     <!-- PAYMENT DETAILS -->
     <div class="card">
@@ -351,10 +139,10 @@ footer{
 
         	<div class="cta">
 
-    <a href="thankyou.html"
-       class="btn btn-primary">
-       I Have Paid
-    </a>
+    <a href="payment-confirmation.html"
+   class="btn btn-primary">
+   I Have Paid
+</a>
 
 </div>
 
@@ -378,21 +166,13 @@ footer{
             <div class="step">
                 <div class="step-number">2</div>
                 <div>
-                    <strong>Receive confirmation</strong>
-                    <p>The studio confirms availability, edition details, and shipping options.</p>
-                </div>
-            </div>
-
-            <div class="step">
-                <div class="step-number">3</div>
-                <div>
                     <strong>Complete payment</strong>
                     <p>Payment is made via USD bank transfer using the details provided.</p>
                 </div>
             </div>
 
             <div class="step">
-                <div class="step-number">4</div>
+                <div class="step-number">3</div>
                 <div>
                     <strong>Artwork delivery</strong>
                     <p>Digital files are delivered securely, and physical prints are prepared for shipment.</p>
@@ -404,13 +184,13 @@ footer{
     </div>
 
 </div>
-```
+
 
 </section>
 
 <section>
 
-```
+
 <div class="card">
 
     <h2>Delivery Information</h2>
@@ -441,17 +221,48 @@ footer{
     </div>
 
 </div>
-```
+
 
 </section>
 
 </main>
 
-<footer>
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer class="site-footer">
+
     <div class="container">
-        © 2026 Black Pearl Art — Contemporary Digital Photography Studio
+
+        <p>
+
+            📧
+            <a href="mailto:Black_Pearlart@outlook.com">
+
+                Black_Pearlart@outlook.com
+
+            </a>
+
+        </p>
+
+        <p>
+
+            📍 Abuja, Nigeria
+
+        </p>
+
+        <p class="copyright">
+
+            © 2026 Black Pearl Hybrid Imaging Studio.
+            All rights reserved.
+
+        </p>
+
     </div>
+
 </footer>
 
 </body>
+
 </html>

@@ -1,990 +1,387 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Collection | Black Pearl Art</title>
+
+<title>Shop | Black Pearl Hybrid Imaging Studio</title>
+
+<meta name="description"
+content="Shop museum-quality fine art prints from Black Pearl Hybrid Imaging Studio.">
+
+<link rel="stylesheet" href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<style>
-:root{
-    --bg:#0b0b0b;
-    --surface:#151515;
-    --gold:#c8a96a;
-    --text:#f2e7d5;
-    --muted:#a8a29e;
-    --border:#262626;
-    --whatsapp:#25d366;
-}
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Inter',sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.7;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-img{
-    width:100%;
-    display:block;
-}
-
-.container{
-    width:min(1240px,92%);
-    margin:auto;
-}
-
-/* NAVIGATION */
-nav{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(11,11,11,0.95);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid var(--border);
-}
-
-.nav-inner{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 0;
-}
-
-.logo{
-    font-family:'Cormorant Garamond',serif;
-    font-size:1.8rem;
-    color:var(--gold);
-    letter-spacing:1px;
-}
-
-.nav-links{
-    display:flex;
-    gap:28px;
-}
-
-.nav-links a{
-    color:var(--muted);
-    font-weight:500;
-    transition:0.3s;
-}
-
-.nav-links a:hover{
-    color:var(--text);
-}
-
-/* HERO */
-.shop-hero{
-    position:relative;
-    min-height:72vh;
-    display:flex;
-    align-items:center;
-    overflow:hidden;
-    border-bottom:1px solid var(--border);
-}
-
-.shop-hero img{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    filter:brightness(0.35);
-}
-
-.shop-hero::after{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:linear-gradient(90deg, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    width:min(760px,92%);
-    margin:auto;
-}
-
-.eyebrow{
-    color:var(--gold);
-    letter-spacing:4px;
-    font-size:0.9rem;
-    margin-bottom:18px;
-}
-
-.shop-hero h1{
-    font-family:'Cormorant Garamond',serif;
-    font-size:clamp(3rem,8vw,6rem);
-    line-height:1.02;
-    margin-bottom:20px;
-}
-
-.shop-hero p{
-    color:var(--muted);
-    font-size:1.12rem;
-    max-width:620px;
-}
-
-/* SECTION */
-section{
-    padding:84px 0;
-}
-
-.section-title{
-    font-family:'Cormorant Garamond',serif;
-    font-size:3rem;
-    margin-bottom:12px;
-}
-
-.section-subtitle{
-    color:var(--muted);
-    max-width:760px;
-    margin-bottom:30px;
-}
-
-/* FILTERS */
-.filters{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-    margin-bottom:34px;
-}
-
-.filter{
-    padding:10px 18px;
-    border-radius:999px;
-    border:1px solid var(--border);
-    background:var(--surface);
-    color:var(--muted);
-    font-size:0.95rem;
-}
-
-.filter.active{
-    background:var(--gold);
-    color:var(--bg);
-    border-color:var(--gold);
-    font-weight:600;
-}
-
-/* GALLERY */
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:28px;
-}
-
-.art-card{
-    background:var(--surface);
-    border:1px solid var(--border);
-    border-radius:22px;
-    overflow:hidden;
-    transition:transform .28s ease, box-shadow .28s ease;
-}
-
-.art-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 18px 40px rgba(0,0,0,.38);
-}
-
-.art-card img{
-    height:360px;
-    object-fit:cover;
-}
-
-.card-content{
-    padding:22px;
-}
-
-.art-card h3{
-    font-family:'Cormorant Garamond',serif;
-    font-size:2rem;
-    margin-bottom:10px;
-}
-
-.art-card p{
-    color:var(--muted);
-    margin-bottom:18px;
-    min-height:72px;
-}
-
-.meta{
-    display:flex;
-    justify-content:space-between;
-    gap:12px;
-    font-size:0.9rem;
-    color:var(--muted);
-    padding:14px 0;
-    border-top:1px solid var(--border);
-    border-bottom:1px solid var(--border);
-    margin-bottom:18px;
-}
-
-.price{
-    display:flex;
-    flex-direction:column;
-    gap:4px;
-    margin-bottom:18px;
-}
-
-.price strong{
-    color:var(--gold);
-    font-size:1.15rem;
-}
-
-.actions{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    padding:12px 18px;
-    border-radius:999px;
-    font-weight:600;
-    transition:.25s;
-    text-align:center;
-    flex:1;
-    min-width:140px;
-}
-
-.btn-outline{
-    border:1px solid var(--gold);
-    color:var(--text);
-}
-
-.btn-outline:hover{
-    background:rgba(200,169,106,.12);
-}
-
-.btn-whatsapp{
-    background:var(--whatsapp);
-    color:#fff;
-}
-
-.btn-whatsapp:hover{
-    filter:brightness(.92);
-}
-
-/* SERVICES */
-.services{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:24px;
-}
-
-.service{
-    background:var(--surface);
-    border:1px solid var(--border);
-    border-radius:20px;
-    padding:26px;
-}
-
-.service h4{
-    color:var(--gold);
-    margin-bottom:10px;
-}
-
-.service p{
-    color:var(--muted);
-}
-
-/* FOOTER */
-footer{
-    border-top:1px solid var(--border);
-    padding:42px 0;
-    color:var(--muted);
-    margin-top:20px;
-}
-
-.footer-inner{
-    display:flex;
-    justify-content:space-between;
-    gap:24px;
-    flex-wrap:wrap;
-}
-
-@media (max-width: 980px){
-
-    .gallery,
-    .services{
-        grid-template-columns:1fr;
-    }
-
-    .nav-inner{
-        flex-direction:column;
-        gap:14px;
-    }
-
-    .shop-hero{
-        min-height:58vh;
-    }
-
-    .shop-hero h1{
-        font-size:3.4rem;
-    }
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+rel="stylesheet">
 
 </head>
 
 <body>
 
-<nav>
-    <div class="container nav-inner">
-        <div class="logo">BLACK PEARL ART</div>
+<header>
 
-```
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="shop.html">Collection</a>
-        <a href="about.html">About</a>
-        <a href="payment.html">Payment</a>
-    </div>
-</div>
-```
+    <nav class="navbar">
 
-</nav>
+        <div class="container">
 
-<header class="shop-hero">
-    <img src="images/solitude.png" alt="Solitude" onclick="popImage(this)">
+            <a href="index.html" class="logo">
 
-```
-<div class="hero-content">
-    <div class="eyebrow">THE COLLECTION</div>
+                <img src="images/LOGO.JPG" alt="Black Pearl Hybrid Imaging Studio">
 
-    <h1>Curated Conceptual Art</h1>
+            </a>
 
-    <p>
-        A selection of cinematic portrait and atmospheric artworks created for
-        collectors, interior designers, and contemporary art enthusiasts worldwide.
-    </p>
-</div>
-```
+            <ul class="nav-menu">
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="collections.html">Collections</a></li>
+
+                <li><a href="shop.html" class="active">Shop</a></li>
+
+                <li><a href="about.html">About</a></li>
+
+                <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+
+        </div>
+
+    </nav>
 
 </header>
 
-<main class="container">
+<!-- ==========================================
+     SHOP HERO
+========================================== -->
 
-<section>
+<section class="collection-hero">
 
-```
-<h2 class="section-title">Featured Works</h2>
+    <div class="hero-image">
 
-<p class="section-subtitle">
-    Start with the studio’s most requested conceptual pieces, chosen for
-    their cinematic composition and gallery-ready presentation.
-</p>
+        <img src="images/LEGACY.png"
+             alt="Shop Fine Art">
 
-<div class="filters">
-    <div class="filter active">All</div>
-    <div class="filter">Portraits</div>
-    <div class="filter">Atmospheric</div>
-    <div class="filter">Monochrome</div>
-    <div class="filter">Limited Editions</div>
-</div>
+    </div>
 
-<div class="gallery">
+    <div class="hero-overlay">
 
-    <!-- SOLITUDE -->
-    <article class="art-card">
-        <img src="images/solitude.png" class="zoomable" alt="Solitude" onclick="popImage(this)">
+        <div class="hero-content">
 
-        <div class="card-content">
-            <h3>Solitude</h3>
-
-            <p>
-                Quiet reflection in enclosed spaces.
+            <p class="collection-number">
+                BLACK PEARL FINE ART
             </p>
 
-          <div class="price">
-                <span>Digital edition</span>
-                <strong>$65</strong>
-                <span>Physical print: $350</span>
-		<span>32 × 25 cm</span>
-            </div>
+            <h1>
+                Shop Fine Art
+            </h1>
 
-            <div class="actions">
-                <a class="btn btn-outline" href="#">View Details</a>
+            <h2>
+                Collect museum-quality fine art prints and digital collector editions that celebrate memory, identity, ancestry, and transformation.
+            </h2>
 
-                <a class="btn btn-whatsapp"
-                   href="https://wa.me/2348163922762?text=Hello, I’m interested in SOLITUDE."
-                   target="_blank">
-                    Inquire
-                </a>
-            </div>
         </div>
-    </article>
 
-    <!-- ANATOMY OF MOURNING -->
-    <article class="art-card">
-       <img src="images/anatomy of mourning.jpg" class="zoomable" alt="ANATOMY OF MOURNING" onclick="popImage(this)">
+    </div>
 
-        <div class="card-content">
-            <h3>Anatomy of Mourning</h3>
+</section>
+
+<!-- ==========================================
+     INTRODUCTION
+========================================== -->
+
+<section class="artwork-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>How to Collect</h2>
 
             <p>
-                Grief is not a destination but a topography we are forced to navigate.
+                Every artwork in the Black Pearl collection is available as a Digital Collector Edition, while selected works are also offered as Museum Fine Art Prints using premium archival materials. Browse a collection below to view available artworks, sizes, and pricing.
             </p>
 
-            <div class="meta">
-                <span>32 × 25 cm</span>
-            </div>
-
-            <div class="price">
-                <span>Digital edition</span>
-                <strong>$55</strong>
-                <span>Physical print: $400</span>
-            </div>
-
-            <div class="actions">
-                <a class="btn btn-outline" href="#">View Details</a>
-
-                <a class="btn btn-whatsapp"
-                   href="https://wa.me/2348163922762?text=Hello, I’m interested in ANATOMY OF MOURNING."
-                   target="_blank">
-                    Inquire
-                </a>
-            </div>
         </div>
-    </article>
 
-    <!-- THE GRANDMASTER'S GAMBIT -->
-    <article class="art-card">
-         <img src="images/gambit.jpg" class="zoomable" alt="The Grandmaster's Gambit" onclick="popImage(this)">
-
-        <div class="card-content">
-            <h3>The Grandmaster’s Gambit</h3>
-
-            <p>In a game of chess, there’s no room for errors, only consequences.</p>
-
-            <div class="meta">
-                <span>Portrait</span>
-                <span>32 × 25 cm</span>
-            </div>
-
-            <div class="price">
-                <span>Digital edition</span>
-                <strong>$75</strong>
-                <span>Physical print: $500</span>
-            </div>
-
-            <div class="actions">
-                <a class="btn btn-outline" href="#">View Details</a>
-
-                <a class="btn btn-whatsapp"
-                   href="https://wa.me/2348163922762?text=Hello, I’m interested in THE GRANDMASTER'S GAMBIT."
-                   target="_blank">
-                    Inquire
-                </a>
-            </div>
-        </div>
-    </article>
-
-</div>
-```
+    </div>
 
 </section>
 
- <!-- COLLAPSIBLE FULL COLLECTION -->
-<section class="full-collection">
+	  <div class="watermark-notice">
+    		<strong>IMPORTANT — PREVIEW &amp; WATERMARK NOTICE</strong>
+    		<p>
+        	All artwork images displayed on this website are protected preview images
+        	and may contain a visible watermark. Watermarks are removed from purchased
+        	digital collector editions and museum-quality physical prints. Purchased
+        	works are supplied in their intended high-resolution, watermark-free format.
+    		</p>
+	  </div>		
 
-    <div style="text-align:center; margin-bottom:24px;">
-        <button class="btn btn-outline"
-                onclick="toggleCollection()"
-                id="collectionBtn"
-                style="cursor:pointer; max-width:320px;">
-            View Full Collection
-        </button>
+
+<!-- ==========================================
+     BROWSE COLLECTIONS
+========================================== -->
+
+<section class="home-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p class="eyebrow">COLLECTIONS</p>
+
+            <h2>Browse the Collections</h2>
+
+            <p>
+                Each collection explores a distinct chapter of the human experience through conceptual hybrid imaging. Select a collection to discover available artworks, editions and pricing.
+            </p>
+
+        </div>
+
+        <div class="collections-grid">
+
+            <!-- Collection 1 -->
+
+            <div class="collection-card">
+
+                <img src="images/legacy.png" alt="Legacy">
+
+                <div class="collection-info">
+
+                    <h3>Before We Had Names</h3>
+
+                    <p>
+                        Identity, ancestry and memory explored through symbolic visual storytelling.
+                    </p>
+
+                    <a href="before-we-had-names.html" class="btn btn-primary">
+                        View Collection
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Collection 2 -->
+
+            <div class="collection-card">
+
+                <img src="images/liminal.png" alt="Liminal">
+
+                <div class="collection-info">
+
+                    <h3>Becoming</h3>
+
+                    <p>
+                        A journey through transformation, resilience and self-discovery.
+                    </p>
+
+                    <a href="becoming.html" class="btn btn-primary">
+                        View Collection
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Collection 3 -->
+
+            <div class="collection-card">
+
+                <img src="images/anatomy of mourning.jpg" alt="Anatomy of Mourning">
+
+                <div class="collection-info">
+
+                    <h3>Burdens</h3>
+
+                    <p>
+                        Artworks reflecting grief, healing and the quiet strength of remembrance.
+                    </p>
+
+                    <a href="burdens.html" class="btn btn-primary">
+    View Collection
+</a>
+
+                </div>
+
+            </div>
+
+            <!-- Collection 4 -->
+
+            <div class="collection-card">
+
+                <img src="images/EQUILIBRIUM.png" alt="Beyond">
+
+                <div class="collection-info">
+
+                    <h3>Beyond</h3>
+
+                    <p>
+                        Exploring hope, transcendence and the possibilities beyond the visible.
+                    </p>
+
+                    <a href="beyond.html" class="btn btn-primary">
+                        View Collection
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Collection 5 -->
+
+            <div class="collection-card">
+
+                <img src="images/GAMBIT.jpg" alt="The Calculus of Choice">
+
+                <div class="collection-info">
+
+                    <h3>The Calculus of Choice</h3>
+
+                    <p>
+                        A meditation on decisions, consequence and the paths that define us.
+                    </p>
+
+                    <a href="calculus-of-choice.html" class="btn btn-primary">
+    View Collection
+</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div id="fullCollection" style="display:none;">
+</section>
 
-        <h2 class="section-title" style="text-align:center;">Full Collection</h2>
+<!-- ==========================================
+     COMMISSIONS
+========================================== -->
 
-        <p class="section-subtitle" style="text-align:center; margin:auto auto 40px;">
-            Explore the complete catalogue of conceptual portraits, atmospheric compositions,
-            monochrome studies, and limited-edition works from the Black Pearl Art archive.
+<section class="collection-closing">
+
+    <div class="container">
+
+        <p class="eyebrow">
+            BESPOKE ARTWORKS
         </p>
-   
- <div class="gallery">
-        <div class="art-card">
-            <img src="images/inception.png" class="zoomable" alt="Inception" onclick="popImage(this)">
-            <h3>Inception</h3>
-            <p>Emergence and identity discovery.</p>
-            <div class="details">25×16 cm</div>
-            <div class="price">Digital $50 · Physical $350</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762" target="_blank">Order via WhatsApp</a>
-        </div>
 
-        <div class="art-card">
-            <img src="images/anatomy of mourning.jpg" class="zoomable" alt="ANATOMY OF MOURNING" onclick="popImage(this)">
-            <h3>ANATOMY OF MOURNING</h3>
-            <p>Grief is not a destination but a topography we are forced to navigate.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $55 · Physical $400</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order ANATOMY OF GRIEF." target="_blank">Order via WhatsApp</a>
-        </div>
+        <h2>
+            Commission an Original Artwork
+        </h2>
 
-        <div class="art-card">
-            <img src="images/gambit.jpg" class="zoomable" alt="The Grandmaster's Gambit" onclick="popImage(this)">
-            <h3>The Grandmaster’s Gambit</h3>
-            <p>In a game of chess, there’s no room for errors, only consequences.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $75 · Physical $500</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order THE GRANDMASTER'S GAMBIT." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/obsidianvision.jpg" class="zoomable" alt="OBSIDIAN VISION" onclick="popImage(this)">
-            <h3>OBSIDIAN VISION</h3>
-            <p>Capturing depth through a darkened lens.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $60 · Physical $350</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order OBSIDIAN VISION." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/legacy.png" class="zoomable" alt="Legacy" onclick="popImage(this)">
-            <h3>Legacy</h3>
-            <p>Ancestry and inherited strength.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $150 · Physical $850</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order LEGACY." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/shardsofthefatherland.jpg" class="zoomable" alt="SHARDS OF THE FATHERLAND" onclick="popImage(this)">
-            <h3>SHARDS OF THE FATHERLAND</h3>
-            <p>Fragmented beauty unites a fatherland.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $100 · Physical $500</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order SHARDS OF THE FATHERLAND." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/sun.jpg" class="zoomable" alt="SUNRISE ON THE SAHARAN SPIRIT" onclick="popImage(this)">
-            <h3>SUNRISE ON THE SAHARAN SPIRIT</h3>
-            <p>Golden light awakens the ancient soul.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $60 · Physical $400</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order SUNRISE ON THE SAHARAN SPIRIT." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/thesubmerged.png" class="zoomable" alt="SUBMERGED" onclick="popImage(this)">
-            <h3>SUBMERGED</h3>
-            <p>Still waters mirror inner strength.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $50 · Physical $350</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order SUBMERGED." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/liminal.png" class="zoomable" alt="Liminal" onclick="popImage(this)">
-            <h3>Liminal</h3>
-            <p>The threshold between becoming and being.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $65 · Physical $400</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order LIMINAL." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/mirror-kin.png" class="zoomable" alt="Mirror-Kin" onclick="popImage(this)">
-            <h3>Mirror-Kin</h3>
-            <p>Blood sisterhood.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $120 · Physical $750</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order MIRROR-KIN." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/anastasia.png" class="zoomable" alt="Anastasia" onclick="popImage(this)">
-            <h3>Anastasia</h3>
-            <p>Colours of elegance and rebirth.</p>
-            <div class="details">25×16 cm</div>
-            <div class="price">Digital $40 · Physical $250</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order ANASTASIA." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/unbound.png" class="zoomable" alt="Unbound" onclick="popImage(this)">
-            <h3>Unbound</h3>
-            <p>Freedom rendered through controlled depth.</p>
-            <div class="details">25×16 cm</div>
-            <div class="price">Digital $40 · Physical $250</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order UNBOUND." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/descent.png" class="zoomable" alt="Descent" onclick="popImage(this)">
-            <h3>Descent</h3>
-            <p>Letting go into unknown spaces.</p>
-            <div class="details">25×16 cm</div>
-            <div class="price">Digital $50 · Physical $300</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order DESCENT." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/surface_and_soul.png" class="zoomable" alt="Surface & Soul" onclick="popImage(this)">
-            <h3>Surface & Soul</h3>
-            <p>Exploring human essence and cosmic narrative.</p>
-            <div class="details">25×16 cm</div>
-            <div class="price">Digital $65 · Physical $400</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order SURFACE AND SOUL." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/solitude.png" class="zoomable" alt="Solitude" onclick="popImage(this)">
-            <h3>Solitude</h3>
-            <p>Quiet reflection in enclosed spaces.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $120 · Physical $600</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order SOLITUDE." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/breach.png" class="zoomable" alt="Breach" onclick="popImage(this)">
-            <h3>Breach</h3>
-            <p>Breaking through limitations.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $60 · Physical $400</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order BREACH." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/tenacity.png" class="zoomable" alt="Tenacity" onclick="popImage(this)">
-            <h3>Tenacity</h3>
-            <p>Resilience and overcoming life struggles.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $100 · Physical $550</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order TENACITY." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/ethereal.png" class="zoomable" alt="Ethereal" onclick="popImage(this)">
-            <h3>Ethereal</h3>
-            <p>Warmth, in presence and form.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $150 · Physical $750</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order ETHEREAL." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/horizonheir.jpg" class="zoomable" alt="HORIZON'S HEIR" onclick="popImage(this)">
-            <h3>HORIZON'S HEIR</h3>
-            <p>Ancestry crowned by the golden sun.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $80 · Physical $450</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order HORIZON'S HEIR." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/AURA.png" class="zoomable" alt="Aura" onclick="popImage(this)">
-            <h3>Aura</h3>
-            <p>The energy within.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $80 · Physical $400</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order AURA." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/AURA BLUE.png" class="zoomable" alt="Aura Blue" onclick="popImage(this)">
-            <h3>Aura Blue</h3>
-            <p>The energy within.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $80 · Physical $400</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order AURA BLUE." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/BLOOM.png" class="zoomable" alt="Bloom" onclick="popImage(this)">
-            <h3>Bloom</h3>
-            <p>Soft and delicate.</p>
-            <div class="details">25×16 cm</div>
-            <div class="price">Digital $60 · Physical $300</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order BLOOM." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/CONTEMPLATION.png" class="zoomable" alt="Contemplation" onclick="popImage(this)">
-            <h3>Contemplation</h3>
-            <p>Soul’s quiet gaze inward.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $65 · Physical $450</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order CONTEMPLATION." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/CONTEMPLATION 2.png" class="zoomable" alt="Contemplation II" onclick="popImage(this)">
-            <h3>Contemplation II</h3>
-            <p>Soul’s quiet gaze inward.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $65 · Physical $450</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order CONTEMPLATION 2." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/CONVERGENCE.png" class="zoomable" alt="Convergence" onclick="popImage(this)">
-            <h3>Convergence</h3>
-            <p>Blend.</p>
-            <div class="details">25×16 cm</div>
-            <div class="price">Digital $50 · Physical $350</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order CONVERGENCE." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/CONVERGENCE 2.png" class="zoomable" alt="Convergence II" onclick="popImage(this)">
-            <h3>Convergence II</h3>
-            <p>Exploring duality.</p>
-            <div class="details">25×16 cm</div>
-            <div class="price">Digital $50 · Physical $350</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order CONVERGENCE 2." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/ECHO.png" class="zoomable" alt="Echo" onclick="popImage(this)">
-            <h3>Echo</h3>
-            <p>Portraiture meets architecture.</p>
-            <div class="details">25×16 cm</div>
-            <div class="price">Digital $50 · Physical $350</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order ECHO." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/ECHOES OF THE HIGHRISE.png" class="zoomable" alt="Echoes of the Highrise" onclick="popImage(this)">
-            <h3>Echoes of the Highrise</h3>
-            <p>Urban solitude.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $80 · Physical $500</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order ECHOES OF THE HIGHRISE." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/EQUILIBRIUM.png" class="zoomable" alt="Equilibrium" onclick="popImage(this)">
-            <h3>Equilibrium</h3>
-            <p>Balance.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $60 · Physical $300</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order EQUILIBRIUM." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/EQUILIBRIUM 2.png" class="zoomable" alt="Equilibrium 2" onclick="popImage(this)">
-            <h3>Equilibrium II</h3>
-            <p>Balance.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $60 · Physical $300</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order EQUILIBRIUM 2." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/EQUILIBRIUM 3.png" class="zoomable" alt="Equilibrium 3" onclick="popImage(this)">
-            <h3>Equilibrium III</h3>
-            <p>Balance.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $60 · Physical $300</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order EQUILIBRIUM 3." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/FLORESSENCE.png" class="zoomable" alt="Floressence" onclick="popImage(this)">
-            <h3>Floressence</h3>
-            <p>Intricate paper blooms.</p>
-            <div class="details">25×16 cm</div>
-            <div class="price">Digital $60 · Physical $350</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order FLORESSENCE." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/FRACTURED.png" class="zoomable" alt="Fractured" onclick="popImage(this)">
-            <h3>Fractured</h3>
-            <p>Her life shards.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $90 · Physical $450</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order FRACTURED." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/FRAGMENTS.png" class="zoomable" alt="Fragments" onclick="popImage(this)">
-            <h3>Fragments</h3>
-            <p>Masked truths.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $70 · Physical $500</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order FRAGMENTS." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/METROPOLITAN MUSE.png" class="zoomable" alt="Metropolitan Muse" onclick="popImage(this)">
-            <h3>Metropolitan Muse</h3>
-            <p>Ethereal soul of the city.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $100 · Physical $550</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order METROPOLITAN MUSE." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/MOSAICS.png" class="zoomable" alt="Mosaics" onclick="popImage(this)">
-            <h3>Mosaics</h3>
-            <p>Three in one.</p>
-            <div class="details">25×40 cm</div>
-            <div class="price">Digital $120 · Physical $600</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order MOSAICS." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/POISE.png" class="zoomable" alt="Poise" onclick="popImage(this)">
-            <h3>Poise</h3>
-            <p>Radiant elegance.</p>
-            <div class="details">25×16 cm</div>
-            <div class="price">Digital $50 · Physical $350</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order POISE." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/PRISM.png" class="zoomable" alt="Prism" onclick="popImage(this)">
-            <h3>Prism</h3>
-            <p>Spectrum of identity.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $100 · Physical $550</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order PRISM." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/PRISM 2.png" class="zoomable" alt="Prism II" onclick="popImage(this)">
-            <h3>Prism II</h3>
-            <p>Spectrum of identity.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $100 · Physical $550</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order PRISM 2." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/SYMMETRY.png" class="zoomable" alt="Symmetry" onclick="popImage(this)">
-            <h3>Symmetry</h3>
-            <p>Brain’s search for balance.</p>
-            <div class="details">25×40 cm</div>
-            <div class="price">Digital $120 · Physical $600</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order SYMMETRY." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/TERRA MATER.png" class="zoomable" alt="Terra Mater" onclick="popImage(this)">
-            <h3>Terra Mater</h3>
-            <p>Foundational earth energy.</p>
-            <div class="details">32×25 cm</div>
-            <div class="price">Digital $100 · Physical $700</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order TERRA MATER." target="_blank">Order via WhatsApp</a>
-        </div>
-
-        <div class="art-card">
-            <img src="images/hypnosis.png" class="zoomable" alt="Hypnosis" onclick="popImage(this)">
-            <h3>Hypnosis</h3>
-            <p>Duality of human nature.</p>
-            <div class="details">25×16 cm</div>
-            <div class="price">Digital $40 · Physical $250</div>
-            <a class="whatsapp-btn" href="https://wa.me/2348163922762?text=Hello, I want to order HYPNOSIS." target="_blank">Order via WhatsApp</a>
-        </div>
-    </div>
-</section>
-
-</section>
-
-</section>
-
-   
-<section>
-
-```
-<h2 class="section-title">Collector Services</h2>
-
-<p class="section-subtitle">
-    Every order is prepared with gallery-level presentation and international collectors in mind.
-</p>
-
-<div class="services">
-
-    <div class="service">
-        <h4>Worldwide Shipping</h4>
         <p>
-            Carefully packaged prints and collector editions shipped internationally.
+            Looking for something created exclusively for you? Black Pearl Hybrid Imaging Studio accepts a limited number of commissions for collectors, interior designers, galleries, institutions and brands seeking original conceptual hybrid imaging.
         </p>
-    </div>
 
-    <div class="service">
-        <h4>Certificate of Authenticity</h4>
-        <p>
-            Signed and certified limited-edition artworks with archival presentation standards.
-        </p>
-    </div>
+        <br><br>
 
-    <div class="service">
-        <h4>Collector Support</h4>
-        <p>
-            Direct communication with the studio for sizing, framing, and custom requests.
-        </p>
-    </div>
-
-</div>
-```
-
-</section>
-
-</main>
-
-<footer>
-    <div class="container footer-inner">
-
-```
-    <div>
-        <strong>Black Pearl Art</strong><br>
-
-    </div>
-
-    <div>
-        <a href="mailto:Black_Pearlart@outlook.com">
-            Black_Pearlart@outlook.com
+        <a href="contact.html" class="btn btn-primary">
+            Start a Commission
         </a>
+
     </div>
 
-    <div>
-        © 2026 Black Pearl Art. All rights reserved.
+</section>
+
+<!-- ==========================================
+     CONTACT
+========================================== -->
+
+<section class="home-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p class="eyebrow">
+                NEED ASSISTANCE?
+            </p>
+
+            <h2>
+                Contact the Studio
+            </h2>
+
+            <p>
+                Whether you're purchasing your first artwork, choosing the right print size, or enquiring about commissions, we're happy to help.
+            </p>
+
+            <br>
+
+            <a href="mailto:Black_Pearlart@outlook.com"
+               class="btn btn-primary">
+
+                Email the Studio
+
+            </a>
+
+            &nbsp;&nbsp;
+
+            <a href="https://wa.me/2348163922762"
+               target="_blank"
+               class="btn btn-secondary">
+
+                Chat on WhatsApp
+
+            </a>
+
+        </div>
+
     </div>
 
-</div>
-```
+</section>
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <p>
+
+            📧
+            <a href="mailto:Black_Pearlart@outlook.com">
+
+                Black_Pearlart@outlook.com
+
+            </a>
+
+        </p>
+
+        <p>
+
+            📍 Abuja, Nigeria
+
+        </p>
+
+        <p class="copyright">
+
+            © 2026 Black Pearl Hybrid Imaging Studio.
+            All rights reserved.
+
+        </p>
+
+    </div>
 
 </footer>
 
-<script>
-function toggleCollection() {
-    const collection = document.getElementById('fullCollection');
-    const button = document.getElementById('collectionBtn');
-
-    if (collection.style.display === 'none') {
-        collection.style.display = 'block';
-        button.innerHTML = 'Hide Full Collection';
-    } else {
-        collection.style.display = 'none';
-        button.innerHTML = 'View Full Collection';
-    }
-}
-</script>
-
 </body>
+
 </html>
+
+
+
